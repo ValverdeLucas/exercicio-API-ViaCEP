@@ -29,8 +29,6 @@ public class ConsultaCEP extends NullPointerException {
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() == 400) {
-                System.out.println(response.body());
-                System.out.println(enderecoCEP);
                 throw new ErroConsultaCEP("CEP não encontrado na lista de logradouros.");
             }
 
